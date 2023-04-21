@@ -5,8 +5,6 @@
   <a href="https://discord.gg/flutter"><img src="https://img.shields.io/badge/Discord-join-blueviolet" alt="Discord"></a>
   <a href="https://twitter.com/flutterdev"><img src="https://img.shields.io/twitter/follow/flutterdev?style=social" alt="Twitter"></a>
   <img src="https://codecov.io/gh/flutter/flutter/branch/master/graph/badge.svg?token=11yDrJU2M2" alt="codecov">
-  <img src="https://bestpractices.coreinfrastructure.org/projects/5631/badge" alt="CII Best Practices">
-  <img src="https://api.securityscorecards.dev/projects/github.com/flutter/flutter/badge" alt="OpenSSF Scorecard">
 </p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
