@@ -16,6 +16,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+## Authors
+
+- [Al-Fhaigar Usman](https://www.github.com/rubickking04)
+
 ## About Flutter
 
 Flutter is Google's SDK for crafting beautiful, fast user experiences for
@@ -136,8 +141,6 @@ Start the server of our API:
 ```bash
 php artisan serve
 ```
-
-
 ## Tech Stack
 
 **Client:** Flutter, Material UI
@@ -145,10 +148,6 @@ php artisan serve
 **Server:** PHP Laravel
 
 **Database:** MySQL
-
-## Authors
-
-- [Al-Fhaigar Usman](https://www.github.com/rubickking04)
 
 ## License
 
