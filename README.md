@@ -19,7 +19,7 @@
 
 ## Authors
 
-- [Al-Fhaigar Usman](https://www.github.com/rubickking04)
+- [Al-Fhaigar Usman BSIT - 3A](https://www.github.com/rubickking04)
 
 ## About Flutter
 
