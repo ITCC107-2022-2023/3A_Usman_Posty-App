@@ -1,13 +1,11 @@
 <p align="center"><a href="https://flutter.dev/" target="_blank"><img src="https://storage.googleapis.com/cms-storage-bucket/c823e53b3a1a7b0d36a9.png" width="300" alt="Flutter Logo"></a></p>
 
-<p align="center">
-[![Build Status - Cirrus][]][Build status]
-[![Discord badge][]][Discord instructions]
-[![Twitter handle][]][Twitter badge]
+[![Build Status - Cirrus](https://img.shields.io/badge/Build%20Status-Cirrus-brightgreen)](https://cirrus-ci.com/github/flutter/flutter)
+[![Discord](https://img.shields.io/badge/Discord-join-blueviolet)](https://discord.gg/flutter)
+[![Twitter](https://img.shields.io/twitter/follow/flutterdev?style=social)](https://twitter.com/flutterdev)
 [![codecov](https://codecov.io/gh/flutter/flutter/branch/master/graph/badge.svg?token=11yDrJU2M2)](https://codecov.io/gh/flutter/flutter)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5631/badge)](https://bestpractices.coreinfrastructure.org/projects/5631)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/flutter/badge)](https://deps.dev/project/github/flutter%2Fflutter)
-</p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
