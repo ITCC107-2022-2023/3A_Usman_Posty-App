@@ -37,7 +37,7 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => 'mongodb+srv://' . env('MONGODB_USERNAME') . ':' . env('MONGODB_PASSWORD') . '@' . env('MONGODB_CLUSTER') . '.' . env('MONGODB_HOST') . '/' . env('MONGODB_DATABASE') . '?retryWrites=true&w=majority',
+            'dsn' => 'mongodb+srv://' . env('MONGODB_USERNAME') . ':' . env('MONGODB_PASSWORD') . '@' . env('MONGODB_CLUSTER') . '.' . env('MONGODB_HOST') . '/' . env('MONGODB_DATABASE'),
             // 'database' => env('DB_DATABASE'),
         ],
 
