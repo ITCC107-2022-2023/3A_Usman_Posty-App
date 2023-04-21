@@ -146,11 +146,12 @@ php artisan serve
 
 **Database:** MySQL
 
+## Authors
+
+- [Al-Fhaigar Usman](https://www.github.com/rubickking04)
 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-## Authors
 
-- [@rubickking04](https://www.github.com/rubickking04)
 
