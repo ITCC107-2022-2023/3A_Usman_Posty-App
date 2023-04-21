@@ -168,5 +168,5 @@ Start the server of our API:
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 ## Authors
 
-- [@octokatherine](https://www.github.com/octokatherine)
+- [@rubickking04](https://www.github.com/rubickking04)
 
