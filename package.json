@@ -1,0 +1,11 @@
+{
+  "name": "posty-app",
+  "version": "1.0.0",
+  "description": "A simple social media application using Flutter and PHP Laravel Framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Al-Fhaigar J. Usman",
+  "license": "MIT"
+}
