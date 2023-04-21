@@ -98,22 +98,6 @@ php artisan jwt:secret
 To configure the database connection, set the default connection entry to `config/database.php`:
 
 ```php
-    #from this
-
-    /*
-    |--------------------------------------------------------------------------
-    | Default Database Connection Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify which of the database connections below you wish
-    | to use as your default connection for all database work. Of course
-    | you may use many connections at once using the Database library.
-    |
-    */
-    'default' => env('DB_CONNECTION', 'mongodb'),
-
-    #to this
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
