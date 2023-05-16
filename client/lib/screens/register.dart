@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vibration/vibration.dart';
 import '../home.dart';
+import 'login.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -51,7 +52,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Welcome back!',
+                'Get Started Free.',
                 style: GoogleFonts.poppins(
                   fontSize: 36,
                   fontWeight: FontWeight.w700,
@@ -67,7 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Column(
                       children: [
                         Text(
-                          'Enter your credentials below.',
+                          'Let’s help you find your new friends.',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
                             fontSize: 18,
@@ -214,16 +215,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              Vibration.vibrate(duration: 100, amplitude: 128);
-                              return 'Please enter a password.';
-                            } else if (value.length < 8) {
-                              Vibration.vibrate(duration: 100, amplitude: 128);
-                              return 'Password must be at least 8 characters long.';
-                            }
-                            return null;
-                          },
                         ),
                         const SizedBox(
                             height:
@@ -261,10 +252,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         GestureDetector(
                           onTap: () {
                             // add your desired functionality here
-                            print('Sign Up tapped');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()),
+                            );
                           },
                           child: Text(
-                            'Not a member? Sign Up',
+                            'Already a member? Sign In',
                             textAlign: TextAlign.left,
                             style: GoogleFonts.poppins(
                               fontSize: 14,
