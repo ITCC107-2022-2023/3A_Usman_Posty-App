@@ -53,7 +53,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
               Padding(
                 padding: const EdgeInsets.only(bottom: 45),
                 child: SvgPicture.asset(
-                  'assets/svg/splash_screen.svg',
+                  'asset/svg/splash_screen.svg',
                   width: 275,
                   height: 250,
                 ),
