@@ -5,18 +5,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vibration/vibration.dart';
 import '../home.dart';
-import 'register.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   bool _isPasswordVisible = false;
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -74,6 +74,52 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontWeight: FontWeight.w300,
                             color: HexColor('#ECEFF1'),
                           ),
+                        ),
+                        const SizedBox(height: 20),
+                        TextFormField(
+                          controller: _nameController,
+                          style: GoogleFonts.poppins(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                          decoration: InputDecoration(
+                            hintText: 'Full Name',
+                            hintStyle: GoogleFonts.poppins(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: HexColor('#ECEFF1').withOpacity(0.6),
+                            ),
+                            prefixIcon: Icon(
+                              Icons.person_outline,
+                              color: HexColor('#ECEFF1').withOpacity(0.6),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white.withOpacity(0.5),
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              Vibration.vibrate(duration: 100, amplitude: 128);
+                              return 'Please enter your full name.';
+                            }
+                            return null;
+                          },
                         ),
                         const SizedBox(height: 20),
                         TextFormField(
@@ -168,6 +214,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              Vibration.vibrate(duration: 100, amplitude: 128);
+                              return 'Please enter a password.';
+                            } else if (value.length < 8) {
+                              Vibration.vibrate(duration: 100, amplitude: 128);
+                              return 'Password must be at least 8 characters long.';
+                            }
+                            return null;
+                          },
                         ),
                         const SizedBox(
                             height:
@@ -205,11 +261,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         GestureDetector(
                           onTap: () {
                             // add your desired functionality here
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const RegisterScreen()),
-                            );
+                            print('Sign Up tapped');
                           },
                           child: Text(
                             'Not a member? Sign Up',
