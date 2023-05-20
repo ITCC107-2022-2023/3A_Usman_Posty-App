@@ -30,6 +30,8 @@ class RegisterController extends GetxController {
       if (response.statusCode == 201) {
         isLoading.value = false;
         debugPrint(json.decode(response.body));
+      } else {
+        debugPrint(json.decode(response.body));
       }
     } catch (error) {
       isLoading.value = false;
