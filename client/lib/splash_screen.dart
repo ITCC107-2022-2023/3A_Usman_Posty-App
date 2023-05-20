@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import './screens/login.dart';
+import 'views/login.dart';
 
 class Splash_Screen extends StatefulWidget {
   const Splash_Screen({Key? key});
