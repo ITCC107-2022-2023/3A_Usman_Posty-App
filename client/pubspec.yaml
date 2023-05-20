@@ -40,6 +40,7 @@ dependencies:
   vibration: ^1.7.6
   http: ^0.13.5
   flutter_svg: ^2.0.5
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
