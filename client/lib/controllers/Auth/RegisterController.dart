@@ -32,6 +32,13 @@ class RegisterController extends GetxController {
         print(json.decode(response.body));
       } else {
         isLoading.value = false;
+        Get.snackbar(
+          'Error',
+          json.decode(response.body)['message'],
+          snackPosition: SnackPosition.TOP,
+          // backgroundColor: Colors.red,
+          colorText: Colors.white,
+        );
         print(json.decode(response.body));
       }
     } catch (error) {

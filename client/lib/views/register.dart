@@ -108,22 +108,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            // errorBorder: OutlineInputBorder(
-                            //   borderSide: const BorderSide(color: Colors.red),
-                            //   borderRadius: BorderRadius.circular(20),
-                            // ),
-                            // focusedErrorBorder: OutlineInputBorder(
-                            //   borderSide: const BorderSide(color: Colors.red),
-                            //   borderRadius: BorderRadius.circular(20),
-                            // ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                           ),
-                          // validator: (value) {
-                          //   if (value == null || value.isEmpty) {
-                          //     Vibration.vibrate(duration: 100, amplitude: 128);
-                          //     return 'Please enter your full name.';
-                          //   }
-                          //   return null;
-                          // },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              Vibration.vibrate(duration: 100, amplitude: 128);
+                              return 'Please enter your full name.';
+                            }
+                            return null;
+                          },
                         ),
                         const SizedBox(height: 20),
                         TextFormField(
