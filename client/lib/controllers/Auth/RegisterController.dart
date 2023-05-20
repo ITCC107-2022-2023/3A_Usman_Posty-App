@@ -1,4 +1,8 @@
+import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:client/constants/constant.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class RegisterController extends GetxController {
   final isLoading = false.obs;
@@ -7,5 +11,29 @@ class RegisterController extends GetxController {
     required String? name,
     required String? email,
     required String? password,
-  }) async {}
+  }) async {
+    try {
+      isLoading(true);
+      isLoading.value = true;
+      var data = {
+        'name': name,
+        'email': email,
+        'password': password,
+      };
+      var response = await http.post(
+        Uri.parse(baseURL + '/register'),
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: data,
+      );
+      if (response.statusCode == 201) {
+        isLoading.value = false;
+        debugPrint(json.decode(response.body));
+      }
+    } catch (error) {
+      isLoading.value = false;
+      print(error.toString());
+    }
+  }
 }

@@ -30,7 +30,7 @@ class RegisterController extends Controller
                     'success' => false,
                     'message' => $validator->errors(),
                 ];
-                return response()->json($response, 200);
+                return response()->json($response, 422);
             }
             $user = User::create([
                 'name' => $request->input('name'),
