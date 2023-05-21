@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -46,17 +47,43 @@ class _MyHomePageState extends State<MyHomePage> {
                 ClipOval(
                   child: Image.asset(
                     'asset/image/usman.jpg', // Replace with your image asset path
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(width: 16),
-                ElevatedButton(
-                  onPressed: () {
-                    // Handle button press
-                  },
-                  child: Text("What's on your mind?"),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: SizedBox(
+                    height: 50, // Set the desired height for the button
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Handle button press
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary:
+                            HexColor('#E4E4E7'), // Set the desired button color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(30.0), // Add border radius
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Align(
+                          alignment: Alignment
+                              .centerLeft, // Align text to the start position
+                          child: Text(
+                            "What's on your mind?",
+                            style: GoogleFonts.poppins(
+                              fontSize: 18,
+                              color: HexColor('#4A5568'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
