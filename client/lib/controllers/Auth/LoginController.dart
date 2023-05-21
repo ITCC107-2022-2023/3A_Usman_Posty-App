@@ -4,7 +4,7 @@ import 'package:client/constants/constant.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-class RegisterController extends GetxController {
+class LoginController extends GetxController {
   final isLoading = false.obs;
 
   Future login({
@@ -19,13 +19,13 @@ class RegisterController extends GetxController {
         'password': password,
       };
       var response = await http.post(
-        Uri.parse(baseURL + '/register'),
+        Uri.parse(baseURL + '/login'),
         headers: {
           'Accept': 'application/json',
         },
         body: data,
       );
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         isLoading.value = false;
         Get.snackbar(
           'Success!',
@@ -39,7 +39,7 @@ class RegisterController extends GetxController {
         isLoading.value = false;
         Get.snackbar(
           'Error',
-          'message',
+          json.decode(response.body)['message'].toString(),
           snackPosition: SnackPosition.TOP,
           backgroundColor: Colors.red,
           colorText: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:client/controllers/Auth/LoginController.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/services.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vibration/vibration.dart';
 import '../home.dart';
 import 'register.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isPasswordVisible = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final LoginController _loginController = Get.put(LoginController());
 
   @override
   void initState() {
@@ -103,27 +106,27 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.red),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
+                            // errorBorder: OutlineInputBorder(
+                            //   borderSide: const BorderSide(color: Colors.red),
+                            //   borderRadius: BorderRadius.circular(20),
+                            // ),
+                            // focusedErrorBorder: OutlineInputBorder(
+                            //   borderSide: const BorderSide(color: Colors.red),
+                            //   borderRadius: BorderRadius.circular(20),
+                            // ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              Vibration.vibrate(duration: 100, amplitude: 128);
-                              return 'Please enter an email address.';
-                            } else if (!RegExp(
-                                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                                .hasMatch(value)) {
-                              Vibration.vibrate(duration: 100, amplitude: 128);
-                              return 'Please enter a valid email address.';
-                            }
-                            return null;
-                          },
+                          // validator: (value) {
+                          //   if (value == null || value.isEmpty) {
+                          //     Vibration.vibrate(duration: 100, amplitude: 128);
+                          //     return 'Please enter an email address.';
+                          //   } else if (!RegExp(
+                          //           r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                          //       .hasMatch(value)) {
+                          //     Vibration.vibrate(duration: 100, amplitude: 128);
+                          //     return 'Please enter a valid email address.';
+                          //   }
+                          //   return null;
+                          // },
                         ),
                         const SizedBox(height: 20),
                         TextField(
@@ -172,35 +175,37 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                             height:
                                 20), // add some space between the text and the button
-                        ElevatedButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const MyHomePage(
-                                        title: 'Home Page',
-                                      )));
-                            }
-                          }, // add your desired functionality here
-                          style: ElevatedButton.styleFrom(
-                            primary: HexColor(
-                                '#1976D2'), // set the background color of the button
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 16,
-                                horizontal:
-                                    122), // set the padding of the button
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    20)), // set the border radius of the button
-                          ),
-                          child: Text(
-                            'Sign In',
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: HexColor('#ECEFF1'),
-                            ),
-                          ),
-                        ),
+                        Obx(() {
+                          return _loginController.isLoading.value
+                              ? const CircularProgressIndicator()
+                              : ElevatedButton(
+                                  onPressed: () async {
+                                    await _loginController.login(
+                                      email: _emailController.text.trim(),
+                                      password: _passwordController.text.trim(),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: HexColor(
+                                        '#1976D2'), // set the background color of the button
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 16,
+                                        horizontal:
+                                            122), // set the padding of the button
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                            20)), // set the border radius of the button
+                                  ),
+                                  child: Text(
+                                    'Sign In',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      color: HexColor('#ECEFF1'),
+                                    ),
+                                  ),
+                                );
+                        }),
                         const SizedBox(height: 10),
                         GestureDetector(
                           onTap: () {

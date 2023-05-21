@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vibration/vibration.dart';
 import '../home.dart';
 import 'login.dart';
+import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.dart';
 import 'package:get/get.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -108,14 +108,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            // errorBorder: OutlineInputBorder(
-                            //   borderSide: const BorderSide(color: Colors.red),
-                            //   borderRadius: BorderRadius.circular(20),
-                            // ),
-                            // focusedErrorBorder: OutlineInputBorder(
-                            //   borderSide: const BorderSide(color: Colors.red),
-                            //   borderRadius: BorderRadius.circular(20),
-                            // ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.red),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                           ),
                           // validator: (value) {
                           //   if (value == null || value.isEmpty) {

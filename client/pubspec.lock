@@ -94,6 +94,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_laravel_form_validation:
+    dependency: "direct main"
+    description:
+      name: flutter_laravel_form_validation
+      sha256: "48384884ad91dc6c48764868be8980751559537af1bb19a25fd8ccff45dcabd4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   flutter_lints:
     dependency: "direct dev"
     description:
