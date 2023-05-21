@@ -42,6 +42,7 @@ dependencies:
   flutter_svg: ^2.0.5
   get: ^4.6.5
   flutter_laravel_form_validation: ^1.0.3
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:

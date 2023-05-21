@@ -3,9 +3,12 @@ import 'dart:convert';
 import 'package:client/constants/constant.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:get_storage/get_storage.dart';
 
 class LoginController extends GetxController {
   final isLoading = false.obs;
+  final userToken = ''.obs;
+  final box = GetStorage();
 
   Future login({
     required String? email,

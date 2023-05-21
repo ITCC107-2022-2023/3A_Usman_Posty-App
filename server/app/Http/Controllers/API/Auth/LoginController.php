@@ -33,7 +33,7 @@ class LoginController extends Controller
                     'success' => false,
                     'errors' => $validator->errors(),
                 ];
-                return response()->json($errors, 200);
+                return response()->json($errors, 422);
             }
             $errors = [$this->username() => trans('auth.failed')];
             $user = \App\Models\User::where($this->username(), $request->{$this->username()})->first();
