@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return response()->json([
+    $data = [
         'message' => 'Welcome to Posty App',
         'author' => 'Al-Fhaigar J. Usman'
-    ])->withHeaders([
-        'Content-Type' => 'application/json',
-    ])->view('welcome');
+    ];
+    return response()->json($data)->header('Content-Type', 'application/json');
+});
+
+Route::get('/', function () {
+    return view('welcome');
 });
