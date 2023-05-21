@@ -2,7 +2,7 @@
     package="com.example.client">
    <application
         android:label="client"
-        android:name="Posty App"
+        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
