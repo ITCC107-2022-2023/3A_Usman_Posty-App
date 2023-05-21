@@ -162,18 +162,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             //   borderRadius: BorderRadius.circular(20),
                             // ),
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              Vibration.vibrate(duration: 100, amplitude: 128);
-                              return 'Please enter an email address.';
-                            } else if (!RegExp(
-                                    r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                                .hasMatch(value)) {
-                              Vibration.vibrate(duration: 100, amplitude: 128);
-                              return 'Please enter a valid email address.';
-                            }
-                            return null;
-                          },
+                          // validator: (value) {
+                          //   if (value == null || value.isEmpty) {
+                          //     Vibration.vibrate(duration: 100, amplitude: 128);
+                          //     return 'Please enter an email address.';
+                          //   } else if (!RegExp(
+                          //           r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                          //       .hasMatch(value)) {
+                          //     Vibration.vibrate(duration: 100, amplitude: 128);
+                          //     return 'Please enter a valid email address.';
+                          //   }
+                          //   return null;
+                          // },
                         ),
                         const SizedBox(height: 20),
                         TextField(

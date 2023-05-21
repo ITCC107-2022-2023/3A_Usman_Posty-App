@@ -7,8 +7,7 @@ import 'package:http/http.dart' as http;
 class RegisterController extends GetxController {
   final isLoading = false.obs;
 
-  Future register({
-    required String? name,
+  Future login({
     required String? email,
     required String? password,
   }) async {
@@ -16,7 +15,6 @@ class RegisterController extends GetxController {
       isLoading(true);
       isLoading.value = true;
       var data = {
-        'name': name,
         'email': email,
         'password': password,
       };
@@ -32,7 +30,7 @@ class RegisterController extends GetxController {
         Get.snackbar(
           'Success!',
           json.decode(response.body)['message'],
-          snackPosition: SnackPosition.TOP,
+          snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
@@ -41,16 +39,16 @@ class RegisterController extends GetxController {
         isLoading.value = false;
         Get.snackbar(
           'Error',
-          json.decode(response.body)['message'].toString(),
+          'message',
           snackPosition: SnackPosition.TOP,
           backgroundColor: Colors.red,
           colorText: Colors.white,
         );
         print(json.decode(response.body));
       }
-    } catch (err) {
+    } catch (error) {
       isLoading.value = false;
-      print(err.toString());
+      print(error.toString());
     }
   }
 }
