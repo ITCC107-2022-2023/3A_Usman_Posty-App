@@ -30,8 +30,18 @@ class LoginController extends GetxController {
         Get.snackbar(
           'Success!',
           json.decode(response.body)['message'],
-          snackPosition: SnackPosition.BOTTOM,
+          snackPosition: SnackPosition.TOP,
           backgroundColor: Colors.green,
+          colorText: Colors.white,
+        );
+        print(json.decode(response.body));
+      } else if (response.statusCode == 401) {
+        isLoading.value = false;
+        Get.snackbar(
+          'Error!',
+          json.decode(response.body)['message'],
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.red,
           colorText: Colors.white,
         );
         print(json.decode(response.body));

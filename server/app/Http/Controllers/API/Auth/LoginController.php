@@ -41,7 +41,7 @@ class LoginController extends Controller
                 $errors = [
                     'message' => 'The provided password is incorrect.'
                 ];
-                return response()->json($errors, 200);
+                return response()->json($errors, 401);
             }
             // Attempt to authenticate the user
             $credentials = $request->only('email', 'password');
@@ -50,7 +50,7 @@ class LoginController extends Controller
                     'success' => false,
                     'message' => 'These credentials do not match our records.',
                 ];
-                return response()->json($errors, 200);
+                return response()->json($errors, 401);
             }
             $user = Auth::user();
             $userToken = JWTAuth::fromUser($user);
