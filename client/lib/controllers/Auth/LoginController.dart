@@ -56,9 +56,9 @@ class LoginController extends GetxController {
         );
         print(json.decode(response.body));
       }
-    } catch (error) {
+    } catch (err) {
       isLoading.value = false;
-      print(error.toString());
+      print(err.toString());
     }
   }
 }
