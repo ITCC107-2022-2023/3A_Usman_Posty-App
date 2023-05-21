@@ -8,7 +8,7 @@ import 'package:client/home.dart';
 
 class LoginController extends GetxController {
   final isLoading = false.obs;
-  final userToken = ''.obs;
+  final token = ''.obs;
   final box = GetStorage();
 
   Future login({
@@ -31,8 +31,8 @@ class LoginController extends GetxController {
       );
       if (response.statusCode == 201) {
         isLoading.value = false;
-        userToken.value = json.decode(response.body)['userToken'];
-        box.write('userToken', userToken.value);
+        token.value = json.decode(response.body)['data']['userToken'];
+        box.write('userToken', token.value);
         Get.offAll(() => const MyHomePage(
               title: 'Home Page',
             ));
