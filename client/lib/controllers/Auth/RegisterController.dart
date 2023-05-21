@@ -35,9 +35,7 @@ class RegisterController extends GetxController {
         isLoading.value = false;
         token.value = json.decode(response.body)['data']['userToken'];
         box.write('userToken', token.value);
-        Get.offAll(() => const MyHomePage(
-              title: 'Home Page',
-            ));
+        Get.offAll(() => const MyHomePage());
         Get.snackbar(
           'Success!',
           json.decode(response.body)['message'],
