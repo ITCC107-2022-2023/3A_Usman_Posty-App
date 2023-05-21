@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     $data = [
         'message' => 'Welcome to Posty App',
-        'author' => 'Al-Fhaigar J. Usman'
+        'about' => 'A simple social media application using Flutter and PHP Laravel Framework.',
+        'created_by' => 'Al-Fhaigar J. Usman',
+        'technology_stacks' => [
+            'frontend' => 'Flutter',
+            'backend' => 'Laravel',
+            'database' => 'MongoDB',
+            'server' => 'Digital Ocean',
+        ],
     ];
     return response()->json($data)->header('Content-Type', 'application/json');
 });
