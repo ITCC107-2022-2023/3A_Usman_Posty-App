@@ -62,7 +62,7 @@ class LoginController extends Controller
                 ],
                 'message' => 'Successfully logged in.',
             ];
-            return response()->json($response, 200);
+            return response()->json($response, 201);
         } catch (\Exception $e) {
             $errors = [
                 'message' => $e->getMessage(),

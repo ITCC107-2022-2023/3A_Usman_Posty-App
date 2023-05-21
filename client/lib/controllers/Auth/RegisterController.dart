@@ -3,9 +3,13 @@ import 'dart:convert';
 import 'package:client/constants/constant.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:get_storage/get_storage.dart';
+import 'package:client/home.dart';
 
 class RegisterController extends GetxController {
   final isLoading = false.obs;
+  final userToken = ''.obs;
+  final box = GetStorage();
 
   Future register({
     required String? name,
@@ -29,6 +33,11 @@ class RegisterController extends GetxController {
       );
       if (response.statusCode == 201) {
         isLoading.value = false;
+        userToken.value = json.decode(response.body)['userToken'];
+        box.write('userToken', userToken.value);
+        Get.offAll(() => const MyHomePage(
+              title: 'Home Page',
+            ));
         Get.snackbar(
           'Success!',
           json.decode(response.body)['message'],

@@ -4,6 +4,7 @@ import 'package:client/constants/constant.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_storage/get_storage.dart';
+import 'package:client/home.dart';
 
 class LoginController extends GetxController {
   final isLoading = false.obs;
@@ -28,8 +29,13 @@ class LoginController extends GetxController {
         },
         body: data,
       );
-      if (response.statusCode == 200) {
+      if (response.statusCode == 201) {
         isLoading.value = false;
+        userToken.value = json.decode(response.body)['userToken'];
+        box.write('userToken', userToken.value);
+        Get.offAll(() => const MyHomePage(
+              title: 'Home Page',
+            ));
         Get.snackbar(
           'Success!',
           json.decode(response.body)['message'],
@@ -52,7 +58,7 @@ class LoginController extends GetxController {
         isLoading.value = false;
         Get.snackbar(
           'Error',
-          json.decode(response.body)['message'].toString(),
+          json.decode(response.body)['errors'].toString(),
           snackPosition: SnackPosition.TOP,
           backgroundColor: Colors.red,
           colorText: Colors.white,
