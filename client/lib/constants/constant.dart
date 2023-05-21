@@ -1,1 +1,1 @@
-const baseURL = 'http://127.0.0.1:8000/api';
+const baseURL = 'https://phplaravel-1004031-3539195.cloudwaysapps.com/api';
