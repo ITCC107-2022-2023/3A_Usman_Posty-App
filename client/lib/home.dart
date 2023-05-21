@@ -35,23 +35,34 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       //Body
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            'asset/image/usman.jpg', // Replace with your icon asset path
-            width: 100,
-            height: 100,
-          ),
-          SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () {
-              // Handle button press
-            },
-            child: Text("What's on your mind?"),
-          ),
-        ],
+      body: Container(
+        padding: const EdgeInsets.all(16.0), // Add padding to the container
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start, // Align items at the top
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                ClipOval(
+                  child: Image.asset(
+                    'asset/image/usman.jpg', // Replace with your image asset path
+                    width: 60,
+                    height: 60,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    // Handle button press
+                  },
+                  child: Text("What's on your mind?"),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+          ],
+        ),
       ),
 
       //Bottom Bar
