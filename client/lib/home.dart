@@ -35,12 +35,36 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       //Body
-      body: Center(child: Text(token)),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(
+            'asset/image/usman.jpg', // Replace with your icon asset path
+            width: 100,
+            height: 100,
+          ),
+          SizedBox(height: 16),
+          ElevatedButton(
+            onPressed: () {
+              // Handle button press
+            },
+            child: Text("What's on your mind?"),
+          ),
+        ],
+      ),
 
       //Bottom Bar
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              blurRadius: 5,
+              offset: Offset(0, -3),
+            ),
+          ],
         ),
         child: BottomNavigationBar(
           selectedItemColor: Colors.white,
