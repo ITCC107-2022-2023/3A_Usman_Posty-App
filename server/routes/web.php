@@ -17,5 +17,7 @@ Route::get('/', function () {
     return response()->json([
         'message' => 'Welcome to Posty App',
         'author' => 'Al-Fhaigar J. Usman'
+    ])->withHeaders([
+        'Content-Type' => 'application/json',
     ])->view('welcome');
 });
